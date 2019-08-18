@@ -8,9 +8,9 @@ beforeEach(() => {
   process.env = { ...oldEnv }
 })
 
-function mockEnv(required, exec) {
-  process.env.REQUIRED = required
-  process.env.npm_execpath = exec
+function mockEnv(requiredManagerName: string, executorManagerName: string): void {
+  process.env.REQUIRED = requiredManagerName
+  process.env.npm_execpath = executorManagerName
 }
 
 test('Validate function do not kill process for yarn when we require yarn', () => {
