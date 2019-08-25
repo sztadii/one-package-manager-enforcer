@@ -1,6 +1,6 @@
 {
   "name": "one-package-manager-enforcer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prevent developers from using many package managers ( yarn, npm or bower ) in one project.",
   "main": "./dist/index.js",
   "author": "sztadii",
@@ -28,7 +28,7 @@
     "type-check": "tsc --noEmit"
   },
   "bin": {
-    "pm-validator": "./dist/index.js"
+    "one-package-manager-enforcer": "./dist/index.js"
   },
   "husky": {
     "hooks": {

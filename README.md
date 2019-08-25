@@ -15,7 +15,7 @@ Available `npx` ( execute npm package binaries - default tool in latest npm )
 Example for yarn
 ```
 "scripts": {
-  "preinstall": "REQUIRED=yarn npx pm-validator"
+  "preinstall": "REQUIRED=yarn npx one-package-manager-enforcer"
   ...
 }
 ```
@@ -23,7 +23,7 @@ Example for yarn
 Example for npm
 ``` 
 "scripts": {
-  "preinstall": "npx pm-validator"
+  "preinstall": "npx one-package-manager-enforcer"
   ...
 }
 ```
