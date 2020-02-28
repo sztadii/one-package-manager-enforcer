@@ -1,6 +1,6 @@
 {
   "name": "one-package-manager-enforcer",
-  "version": "1.0.4",
+  "version": "1.0.2",
   "description": "Prevent developers from using many package managers ( yarn, npm or bower ) in one project.",
   "main": "./dist/index.js",
   "author": "sztadii",
@@ -18,7 +18,7 @@
     "prepublish": "npm run build",
     "start": "concurrently -k -r -s first 'npm run lint-watch' 'npm run test-watch'",
     "check-validate": "npm run build && REQUIRED=npm node dist",
-    "test": "jest --coverage",
+    "test": "jest --silent",
     "test-watch": "jest --watch",
     "build": "npm run clean && babel src --out-dir dist --extensions '.ts' --ignore '**/*.test.ts'",
     "lint": "esw './**/*.ts' --ignore-path .gitignore --color --max-warnings 0",
@@ -52,36 +52,28 @@
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts?$",
-    "coverageThreshold": {
-      "global": {
-        "branches": 75,
-        "functions": 95,
-        "lines": 95,
-        "statements": 95
-      }
-    }
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts?$"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.11",
-    "@types/node": "^11.13.7",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^11.15.7",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^23.6.0",
     "concurrently": "^4.1.0",
-    "eslint": "^6.2.2",
-    "eslint-plugin-jest": "^22.15.2",
-    "eslint-watch": "^6.0.0",
+    "eslint": "^5.11.1",
+    "eslint-plugin-jest": "^22.21.0",
+    "eslint-watch": "^4.0.2",
     "husky": "^1.3.1",
-    "jest": "^23.6.0",
-    "jest-mock-process": "^1.1.0",
+    "jest": "^25.1.0",
+    "jest-mock-process": "^1.3.2",
     "lint-staged": "^8.1.0",
-    "prettier": "^1.15.3",
+    "prettier": "^1.19.1",
     "regenerator-runtime": "^0.13.1",
-    "typescript": "^3.4.5"
+    "typescript": "^3.8.2"
   }
 }
