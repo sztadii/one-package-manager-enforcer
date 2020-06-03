@@ -1,6 +1,6 @@
 {
   "name": "one-package-manager-enforcer",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Prevent developers from using many package managers ( yarn, npm or bower ) in one project.",
   "main": "./dist/index.js",
   "author": "sztadii",
