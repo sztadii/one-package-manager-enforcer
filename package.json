@@ -14,8 +14,11 @@
     "package manager enforcer",
     "package manager validation"
   ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "start": "concurrently -k -r -s first 'npm run lint-watch' 'npm run test-watch'",
     "check-validate": "npm run build && REQUIRED=npm node dist",
     "test": "jest --silent",
