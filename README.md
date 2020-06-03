@@ -11,12 +11,6 @@ To prevent it I created this package.
 Available `npx` ( execute npm package binaries - default tool in latest npm )
 Run it with `preinstall` hook. We support only `npm` and `yarn` ( by default we support npm )
 
-## How to install
-
-```
-npm i -D one-package-manager-enforcer
-```
-
 ## Example
 
 Example for yarn
