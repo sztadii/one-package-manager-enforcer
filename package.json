@@ -20,7 +20,7 @@
   "scripts": {
     "prepare": "npm run build",
     "start": "concurrently -k -r -s first 'npm run lint-watch' 'npm run test-watch'",
-    "check-validate": "npm run build && REQUIRED=npm node dist",
+    "validate-npm": "REQUIRED=npm node dist",
     "test": "jest --silent",
     "test-watch": "jest --watch",
     "build": "npm run clean && tsc --project tsconfig.build.json",
@@ -28,7 +28,7 @@
     "lint-watch": "esw './**/*.ts' --ignore-path .gitignore --color --watch --cache",
     "format": "prettier 'src/**/*.ts' --write",
     "clean": "rm -rf dist",
-    "type-check": "tsc --noEmit"
+    "types-check": "tsc --noEmit"
   },
   "bin": {
     "one-package-manager-enforcer": "./dist/index.js"
@@ -60,14 +60,14 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.6",
-    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.8.3",
     "@types/jest": "^24.9.1",
     "@types/node": "^11.15.7",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^23.6.0",
-    "concurrently": "^4.1.0",
+    "babel-jest": "^26.6.3",
+    "concurrently": "^5.3.0",
     "eslint": "^5.11.1",
     "eslint-plugin-jest": "^22.21.0",
     "eslint-watch": "^4.0.2",
@@ -80,12 +80,20 @@
     "typescript": "^3.8.2"
   },
   "babel": {
-    "presets": ["@babel/preset-env", "@babel/preset-typescript"]
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-typescript"
+    ]
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "plugins": ["jest"],
-    "extends": ["eslint:recommended", "plugin:jest/recommended"],
+    "plugins": [
+      "jest"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended"
+    ],
     "env": {
       "node": true,
       "jest": true
