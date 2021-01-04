@@ -78,5 +78,27 @@
     "prettier": "^1.19.1",
     "regenerator-runtime": "^0.13.1",
     "typescript": "^3.8.2"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env", "@babel/preset-typescript"]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "plugins": ["jest"],
+    "extends": ["eslint:recommended", "plugin:jest/recommended"],
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "no-console": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "semi": false
   }
 }
